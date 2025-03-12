@@ -466,6 +466,60 @@ body.dark-mode .alert-success {
     transform: translateY(-5px);
 }
 
+#welcome-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0d6efd; /* Fondo azul de alert-info */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px;
+    border-bottom: 2px solid #0b5ed7;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#welcome-message .btn-close {
+    position: absolute;
+    top: 50%;
+    right: 15px; /* Ajustado para visibilidad */
+    transform: translateY(-50%);
+    background: none; /* Sin fondo */
+    color: #ffffff; /* Blanco para contraste */
+    opacity: 1; /* Visible */
+    padding: 0.25rem; /* Tamaño del botón */
+    cursor: pointer;
+}
+
+/* Modo oscuro */
+body.dark-mode #welcome-message {
+    background-color: #15a2a7; /* Verde oscuro para contraste */
+    color: #d4edda; /* Texto claro */
+    border-bottom: 2px solid #0aafb8;
+}
+
+body.dark-mode #welcome-message .btn-close {
+    color: #ffffff; /* Blanco en modo oscuro */
+}
+
+/* Animaciones */
+.fadeIn {
+    animation: fadeIn 0.5s ease-in;
+}
+.fadeOut {
+    animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 /*******************************************************
  * Noticias y Cards
  *******************************************************/
