@@ -482,27 +482,27 @@ body.dark-mode .alert-success {
 #welcome-message .btn-close {
     position: absolute;
     top: 50%;
-    right: 15px; /* Ajustado para visibilidad */
+    right: 15px;
     transform: translateY(-50%);
-    background: none; /* Sin fondo */
-    color: #ffffff; /* Blanco para contraste */
-    opacity: 1; /* Visible */
-    padding: 0.25rem; /* Tamaño del botón */
+    background: none; 
+    color: #ffffff; 
+    opacity: 1; 
+    padding: 0.25rem; 
     cursor: pointer;
 }
 
-/* Modo oscuro */
+
 body.dark-mode #welcome-message {
-    background-color: #15a2a7; /* Verde oscuro para contraste */
-    color: #d4edda; /* Texto claro */
+    background-color: #15a2a7; 
+    color: #d4edda; 
     border-bottom: 2px solid #0aafb8;
 }
 
 body.dark-mode #welcome-message .btn-close {
-    color: #ffffff; /* Blanco en modo oscuro */
+    color: #ffffff; 
 }
 
-/* Animaciones */
+
 .fadeIn {
     animation: fadeIn 0.5s ease-in;
 }
