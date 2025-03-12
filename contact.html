@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contáctanos en Explora el Corazón de la Tecnología para resolver tus dudas o colaborar con nosotros.">
+    <meta name="keywords" content="tecnología, hardware, contacto, soporte, Explora el Corazón">
+    <meta name="author" content="Tu Nombre o Equipo">
+    <meta property="og:title" content="Contacto - Explora el Corazón de la Tecnología">
+    <meta property="og:description" content="Ponte en contacto con nosotros para aprender más sobre tecnología y hardware.">
+    <meta property="og:image" content="/images/og-image.jpg">
+    <meta property="og:url" content="https://tu-sitio.com/contact.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicons con ruta /images/ -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos inline para asegurar que el footer esté abajo -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
+    </style>
+
+    <title>Contacto - Explora el Corazón de la Tecnología</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navbar (sin fixed-top para que no siga al bajar) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Descubre la Esencia Tecnológica</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">Noticias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="links.html">Enlaces</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="btn btn-outline-light ms-2" aria-label="Cambiar tema">
+                                <i class="bi bi-moon-stars-fill"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="container my-5 pt-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+                </ol>
+            </nav>
+
+            <h1 class="text-center mb-4">Contáctanos</h1>
+            <p class="text-center mb-5">¿Tienes preguntas o quieres colaborar con nosotros? Completa el formulario o envíanos un correo directamente.</p>
+
+            <!-- Formulario de contacto -->
+            <div class="container my-5">
+                <form id="contact-form" class="col-md-6 mx-auto">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" required aria-describedby="nameHelp">
+                        <div id="nameHelp" class="form-text">Ingresa tu nombre completo.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" required aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Usaremos este correo para responderte.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" rows="5" required aria-describedby="messageHelp"></textarea>
+                        <div id="messageHelp" class="form-text">Describe tu consulta o sugerencia.</div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <a href="#" id="mailto-btn" class="btn btn-outline-primary ms-2">Enviar por Correo</a>
+                    </div>
+                </form>
+                <div id="form-success" class="alert alert-success mt-3 d-none" role="alert">
+                    ¡Mensaje enviado con éxito! Te responderemos pronto.
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <p>© 2025 Explora el Corazón de la Tecnología. Todos los derechos reservados.</p>
+                <a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</a>
+                <span class="mx-2">|</span>
+                <a href="mailto:lc2012-0869@unphu.edu.do" class="text-white">lc2012-0869@unphu.edu.do</a>
+                <div class="social-links mt-2">
+                    <a href="https://facebook.com" target="_blank" class="text-white mx-2" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="text-white mx-2" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="text-white mx-2" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de Políticas de Privacidad -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Política de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tu privacidad es importante para nosotros. En Explora el Corazón de la Tecnología, recopilamos información básica como tu nombre y correo electrónico únicamente para responder a tus consultas. No compartimos tus datos con terceros sin tu consentimiento. Para más detalles, contáctanos.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts personalizados -->
+    <script src="scripts.js"></script>
+</body>
+</html>

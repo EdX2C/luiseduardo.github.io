@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalles de noticias sobre hardware y tecnología informática.">
+    <meta name="keywords" content="hardware, tecnología, noticias, GPU, CPU, componentes">
+    <meta name="author" content="Tu Nombre">
+    <title>Detalles de la Noticia - Explora el Corazón de la Tecnología</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Descubre la Esencia Tecnológica</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="news.html">Noticias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="links.html">Enlaces</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="btn btn-link nav-link"><i class="bi bi-moon-stars-fill"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section con Imagen Destacada -->
+        <section class="news-hero position-relative" id="news-hero">
+            <img id="news-image" src="" class="img-fluid w-100" alt="Imagen de la Noticia" loading="lazy">
+            <div class="hero-overlay"></div>
+            <div class="hero-content text-center text-white position-absolute top-50 start-50 translate-middle">
+                <h1 id="news-title" class="display-4 fw-bold animate-hero-title">Cargando...</h1>
+                <p id="news-description" class="lead animate-hero-subtitle"></p>
+            </div>
+        </section>
+
+        
+        
+        <!-- Metadatos -->
+        <section class="container my-4">
+            <div class="row text-center text-md-start">
+                <div class="col-md-6">
+                    <span class="badge bg-info text-dark" id="news-category"></span>
+                    <span class="text-muted ms-2" id="news-date" style="color: #ffffff;"></span>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <span class="text-muted" style="color: #ffffff;">Por <span id="news-author"></span></span>
+                    <span class="text-muted ms-3" style="color: #ffffff;"><i class="bi bi-clock"></i> <span id="news-read-time"></span> min</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido Detallado -->
+        <section class="container my-5 section" id="news-detail-section">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <div id="news-detailed-content" class="news-content"></div>
+                        </div>
+                    </div>
+                    <!-- Video -->
+                    <div class="mt-5">
+                        <h5 class="fw-bold mb-3">Video Relacionado</h5>
+                        <div id="news-video" class="ratio ratio-16x9" style="display: none;">
+                            <iframe id="youtube-video" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sticky-top" style="top: 80px;">
+                        <h5 class="fw-bold mb-3">Especificaciones</h5>
+                        <ul id="news-specifications" class="list-group mb-4"></ul>
+                        <h5 class="fw-bold mb-3">Disponibilidad</h5>
+                        <p id="news-availability" class="card-text"></p>
+                        <a href="news.html" class="btn btn-primary w-100 animate-hero-btn">Volver a Noticias</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4">
+            <div class="container text-center">
+                <p>© 2025 Explora el Corazón de la Tecnología. Todos los derechos reservados.</p>
+                <a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</a>
+                <span class="mx-2">|</span>
+                <a href="mailto:lc2012-0869@unphu.edu.do" class="text-white">lc2012-0869@unphu.edu.do</a>
+                <div class="social-links mt-2">
+                    <a href="https://twitter.com" target="_blank" class="text-white mx-2" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="text-white mx-2" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de Políticas de Privacidad -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Política de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Respetamos tu privacidad. No compartimos tus datos con terceros. Este sitio usa cookies para mejorar la experiencia del usuario.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

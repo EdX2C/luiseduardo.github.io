@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora el hardware informático moderno con una experiencia interactiva única. Descubre los componentes de una PC real y aprende sobre la historia de la tecnología.">
+    <meta name="keywords" content="hardware, PC, tecnología, GPU, RTX 4090, Ryzen 7, componentes, informática, simulación interactiva">
+    <meta name="author" content="Tu Nombre">
+    <meta property="og:title" content="Explora el Corazón de la Tecnología">
+    <meta property="og:description" content="Descubre el mundo del hardware informático como nunca antes con nuestra simulación interactiva de una PC real.">
+    
+    <meta property="og:image" content="images/pc_closed.webp">
+    <meta property="og:url" content="https://tu-sitio.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Explora el Corazón de la Tecnología">
+    <meta name="twitter:description" content="Descubre el mundo del hardware informático como nunca antes con nuestra simulación interactiva de una PC real.">
+    
+    <meta name="twitter:image" content="images/pc_closed.webp">
+    <title>Explora el Corazón de la Tecnología</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <!-- Fuentes y Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Preload imagen pc_closed.webp -->
+    <link rel="preload" href="images/pc_closed.webp" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+</head>
+<body class="dark-mode">
+    <!-- Mensaje de Bienvenida -->
+    <div id="welcome-message" class="alert alert-info text-center" role="alert">
+        ¡Bienvenido! Esta página está diseñada para usarse en <strong>modo oscuro</strong> para una mejor experiencia. 
+        <button id="close-welcome" class="btn btn-close ms-2" aria-label="Cerrar"></button>
+    </div>
+    
+    <!-- Navbar (sin cambios, manteniendo navbar-dark bg-dark) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Descubre la Esencia Tecnológica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="links.html">Enlaces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-link nav-link"><i class="bi bi-sun"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section con Partículas y Overlay -->
+    <header class="hero text-center text-white" id="hero-section">
+        <!-- Overlay para reforzar el contraste -->
+        <div class="hero-overlay"></div>
+        <!-- Contenedor para Particles.js -->
+        <div id="particles-js" class="particles-container"></div>
+        <div class="hero-content">
+            <h1 class="animate-hero-title">Explora el Corazón de la Tecnología</h1>
+            <p class="animate-hero-subtitle">Descubre el mundo del hardware informático como nunca antes.</p>
+            <a href="#pc-section" class="btn btn-primary btn-lg mt-3 animate-hero-btn">Explora Ahora</a>
+        </div>
+        <!-- Cambiamos pc_closed.webp a pc_closed.webp en el background -->
+        <style>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                        url('images/pc_closed.webp') no-repeat center/cover;
+            background-attachment: fixed;
+        }
+        </style>
+    </header>
+
+    <!-- Sección Introductoria -->
+    <section class="container my-5 intro-section">
+        <div class="row text-center">
+            <div class="col-md-8 mx-auto">
+                <h2 class="mb-4">Descubre el Hardware Moderno</h2>
+                <p>Interactúa con una simulación realista de una PC, explora sus componentes y aprende sobre su evolución a lo largo de la historia. Pasa el cursor sobre los elementos para descubrir más y haz clic para verlos en detalle.</p>
+                <button id="start-tutorial" class="btn btn-info mt-3">Iniciar Tutorial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PC Virtual con Tutorial -->
+    <section class="container my-5" id="pc-section">
+        <h2 class="text-center">Explora una PC Real</h2>
+        <div class="view-toggle text-center mb-3">
+            <button id="view-front" class="btn btn-primary active">Vista Frontal</button>
+            <button id="view-back" class="btn btn-secondary">Vista Trasera</button>
+        </div>
+        <div class="pc-container position-relative">
+            <div id="pc-views">
+                <!-- Vista Frontal -->
+                <div id="pc-front-view" class="pc-view active">
+                    <!-- Cambiamos pc_closed.webp a pc_closed.webp -->
+                    <img src="images/pc_closed.webp" alt="PC Cerrada" id="pc-image" class="img-fluid interactive" tabindex="0">
+                    <p class="text-center mt-2">Haga clic para explorar los componentes</p>
+                    <div id="pc-inside" class="d-none position-relative">
+                        <!-- Cambiamos pc_open.webp a pc_open.webp -->
+                        <img src="images/pc_open.webp" alt="PC Abierta" class="img-fluid rgb-effect" usemap="#pc-map">
+                        <div class="hotspot-highlights">
+                            <!-- Hotspots (sin cambio en coordenadas, solo en la data-image) -->
+                            <div class="highlight" data-area="GPU" style="left: 50px; top: 355px; width: 562px; height: 120px;"></div>
+                            <div class="highlight" data-area="Cooler" style="left: 221px; top: 188px; width: 101px; height: 97px;"></div>
+                            <div class="highlight" data-area="Motherboard" style="left: 106px; top: 137px; width: 90px; height: 183px;"></div>
+                            <div class="highlight" data-area="Fans" style="left: 111px; top: 14px; width: 514px; height: 66px;"></div>
+                            <div class="highlight" data-area="Ram" style="left: 356px; top: 157px; width: 39px; height: 171px;"></div>
+                            <div class="highlight" data-area="PSU" style="left: 95px; top: 511px; width: 34px; height: 29px;"></div>
+                            <div class="highlight" data-area="SSD" style="left: 250px; top: 400px; width: 80px; height: 50px;"></div>
+                        </div>
+                        <div id="tutorial-overlay" class="tutorial-overlay d-none">
+                            <div class="tutorial-step">
+                                <h4>Paso <span id="tutorial-step-number">1</span> de 3</h4>
+                                <p id="tutorial-message">Pasa el cursor sobre un componente para verlo resaltado.</p>
+                                <button id="next-step" class="btn btn-secondary mt-2">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                    <map name="pc-map">
+                        <!-- Cambiamos data-image de .webp a .webp -->
+                        <area alt="GPU" title="GPU" data-image="images/gpu_zoomed.webp" coords="50,355,612,475" shape="rect" aria-label="Haz clic para ver la GPU">
+                        <area alt="Cooler" title="Cooler" data-image="images/cooler_zoomed.webp" coords="221,188,322,285" shape="rect" aria-label="Haz clic para ver el Cooler">
+                        <area alt="Motherboard" title="Motherboard" data-image="images/motherboard_zoomed.webp" coords="106,137,196,320" shape="rect" aria-label="Haz clic para ver la Placa Base">
+                        <area alt="Fans" title="Fans" data-image="images/fans_zoomed.webp" coords="111,14,625,80" shape="rect" aria-label="Haz clic para ver los Ventiladores">
+                        <area alt="Ram" title="Ram" data-image="images/ram_zoomed.webp" coords="356,157,395,328" shape="rect" aria-label="Haz clic para ver la Memoria RAM">
+                        <area alt="PSU" title="PSU" data-image="images/psu_zoomed.webp" coords="95,540,129,511" shape="rect" aria-label="Haz clic para ver la Fuente de Alimentación">
+                        <area alt="SSD" title="SSD" data-image="images/ssd_zoomed.webp" coords="250,400,330,450" shape="rect" aria-label="Haz clic para ver el SSD">
+                    </map>
+                </div>
+
+                <!-- Vista Trasera -->
+                <div id="pc-back-view" class="pc-view d-none">
+                    <!-- Cambiamos back_closed.webp a back_closed.webp -->
+                    <img src="images/back_closed.webp" alt="PC Trasera Cerrada" id="pc-back-closed" class="img-fluid interactive" tabindex="0">
+                    <p class="text-center mt-2">Haga clic o presione Enter para explorar los componentes traseros</p>
+                    <div id="pc-back-open" class="d-none position-relative">
+                        <!-- Cambiamos back_open.webp a back_open.webp -->
+                        <img src="images/back_open.webp" alt="PC Trasera Abierta" class="img-fluid rgb-effect" usemap="#back-map">
+                        <div class="hotspot-highlights">
+                            <div class="highlight" data-area="PSU" style="left: 472px; top: 400px; width: 263px; height: 221px;" data-debug="PSU"></div>
+                        </div>
+                    </div>
+                    <map name="back-map">
+                        <!-- Cambiamos psu_zoomed.webp a psu_zoomed.webp -->
+                        <area alt="PSU" title="PSU" data-image="images/psu_zoomed.webp" coords="472,440,735,661" shape="rect" aria-label="Haz clic para ver la Fuente de Alimentación">
+                    </map>
+                </div>
+
+                <!-- Contenedor Único para la Imagen Ampliada con Botones -->
+                <div id="zoomed-view" class="d-none position-relative">
+                    <div class="zoomed-content d-flex align-items-center">
+                        
+                        <img id="zoomed-image" src="images/cooler_zoomed.webp" alt="Componente Ampliada" width="800" height="650">
+                        <div class="component-info ms-3 text-white">
+                            <h3 id="zoomed-title">Cooler</h3>
+                            <p id="zoomed-desc">Pump block del cooler, encargado de la refrigeración líquida.</p>
+                        </div>
+                    </div>
+                    <div id="zoomed-controls" class="position-absolute bottom-0 end-0 m-3 d-none">
+                        <button id="remove-cooler" class="btn btn-warning me-2">Remover el Cooler</button>
+                        <button id="back-button" class="btn btn-secondary d-none">Volver Atrás</button>
+                    </div>
+                    <button id="close-zoomed" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2">Cerrar</button>
+                </div>
+            </div>
+            <div id="tooltip" class="tooltip d-none"></div>
+        </div>
+    </section>
+
+    <!-- Sección Histórica con Animaciones Mejoradas -->
+    <section class="container my-5" id="history-section">
+        <h2 class="text-center">Historia del Hardware</h2>
+        <div class="timeline-container">
+            <ul class="timeline-list">
+                <li class="timeline-item" data-year="1971">
+                    <div class="timeline-icon"><i class="bi bi-cpu"></i></div>
+                    <div class="timeline-content">
+                        <h3>1971 - Primer Microprocesador</h3>
+                        <p class="short-desc">Intel 4004, el primer microprocesador comercial.</p>
+                        <div class="expanded-desc">
+                            <p>El Intel 4004 marcó el inicio de la era de los microprocesadores, con una velocidad de 740 kHz y 2300 transistores.</p>
+                            <img src="images/intel_4004.webp" alt="Intel 4004" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item" data-year="1981">
+                    <div class="timeline-icon"><i class="bi bi-pc-display"></i></div>
+                    <div class="timeline-content">
+                        <h3>1981 - IBM PC</h3>
+                        <p class="short-desc">La IBM PC establece el estándar de computadoras personales.</p>
+                        <div class="expanded-desc">
+                            <p>Lanzada en agosto de 1981, la IBM PC con procesador Intel 8088 definió la arquitectura de las PCs modernas.</p>
+                            <img src="images/ibm_pc.webp" alt="IBM PC" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item" data-year="1993">
+                    <div class="timeline-icon"><i class="bi bi-gpu-card"></i></div>
+                    <div class="timeline-content">
+                        <h3>1993 - Tarjetas Gráficas 3D</h3>
+                        <p class="short-desc">3dfx Voodoo revoluciona los gráficos.</p>
+                        <div class="expanded-desc">
+                            <p>La 3dfx Voodoo trajo gráficos 3D acelerados por hardware al mercado de consumo, cambiando la industria de los videojuegos.</p>
+                            <img src="images/voodoo.webp" alt="3dfx Voodoo" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item" data-year="2007">
+                    <div class="timeline-icon"><i class="bi bi-phone"></i></div>
+                    <div class="timeline-content">
+                        <h3>2007 - iPhone y Procesadores Móviles</h3>
+                        <p class="short-desc">Apple lanza el iPhone, popularizando los SoC móviles.</p>
+                        <div class="expanded-desc">
+                            <p>El iPhone introdujo el chip ARM personalizado, marcando el auge de los procesadores móviles de alto rendimiento.</p>
+                            <img src="images/iphone.webp" alt="iPhone" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item" data-year="2017">
+                    <div class="timeline-icon"><i class="bi bi-hdd-stack"></i></div>
+                    <div class="timeline-content">
+                        <h3>2017 - Almacenamiento NVMe</h3>
+                        <p class="short-desc">Los SSD NVMe superan a los discos tradicionales.</p>
+                        <div class="expanded-desc">
+                            <p>Los SSD con tecnología NVMe, como el Samsung 960 Pro, ofrecieron velocidades de lectura/escritura revolucionarias.</p>
+                            <img src="images/nvme.webp" alt="SSD NVMe" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item" data-year="2025">
+                    <div class="timeline-icon"><i class="bi bi-motherboard"></i></div>
+                    <div class="timeline-content">
+                        <h3>2025 - Hardware Moderno</h3>
+                        <p class="short-desc">RTX 4090 y Ryzen 9000 lideran el mercado.</p>
+                        <div class="expanded-desc">
+                            <p>La RTX 4090 y Ryzen 9000 representan lo último en rendimiento gráfico y computacional, con soporte para IA y 8K.</p>
+                            <img src="images/rtx_4090.webp" alt="RTX 4090" class="img-fluid" loading="lazy">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+        </div>
+        <p>© 2025 Explora el Corazón de la Tecnología</p>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Políticas de Privacidad</a> | 
+        <a href="mailto:lc2012-0869@unphu.edu.do?subject=Consulta%20desde%20Explora%20el%20Corazón&body=Hola,%20tengo%20una%20pregunta%20o%20comentario%20sobre%20el%20proyecto.%20Gracias!" class="btn btn-primary">Contáctanos</a>
+    </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="back-to-top" class="btn btn-primary back-to-top" title="Volver Arriba">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Modal de Políticas de Privacidad -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Políticas de Privacidad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Respetamos tu privacidad. No compartimos tus datos con terceros. Este sitio usa cookies para mejorar la experiencia del usuario.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/particles.js"></script>
+    <!-- Configuración de Particles.js inline -->
+    <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00b3e6" },
+            "shape": {
+                "type": "circle",
+                "stroke": { "width": 0, "color": "#000000" },
+                "polygon": { "nb_sides": 5 }
+            },
+            "opacity": { "value": 0.5, "random": false },
+            "size": { "value": 3, "random": true },
+            "line_linked": { "enable": true, "distance": 150, "color": "#00b3e6", "opacity": 0.4, "width": 1 },
+            "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": { "enable": true, "mode": "repulse" },
+                "onclick": { "enable": true, "mode": "push" },
+                "resize": true
+            },
+            "modes": {
+                "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+                "repulse": { "distance": 200 },
+                "push": { "particles_nb": 4 },
+                "remove": { "particles_nb": 2 }
+            }
+        },
+        "retina_detect": true
+    });
+    </script>
+    <script src="./scripts.js"></script>
+</body>
+</html>
